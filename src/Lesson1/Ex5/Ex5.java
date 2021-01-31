@@ -6,7 +6,7 @@ public class Ex5 {
     public static void main(String[] args) {
         //Дано любое натуральное 4-х значное число. Верно ли, что все цифры числа
         //различны?
-       int num = 8541;
+       int num = 8571;
 
        int a = num/1000;
        int b = num/100 %10;
@@ -18,5 +18,16 @@ public class Ex5 {
        else {
            out.println("Не верно");
        }
-    }
+
+         if (a==b | a==c | a==d ){
+             out.println( "Не верно.");
+         }else if (b==a | b==c | b==d){
+             out.println("Не верно.");
+         }else{
+             out.println("Верно.");
+         }
+
+        }
+
+
 }
