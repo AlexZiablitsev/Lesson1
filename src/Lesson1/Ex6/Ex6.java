@@ -26,5 +26,23 @@ public class Ex6 {
         else {
             System.out.println("Число является не четным");
         }
+
+         // Второй вариант
+        switch (s){
+            case 3:
+                System.out.println("Является трех значным числом.");
+                break;
+            default:
+                System.out.println("Не является трех значным числом.");
+        }
+        switch (module%10){
+            case 7:System.out.println("Последняя цифра является 7.");
+            break;
+            default:System.out.println("Последняя цифра не является 7.");
+        }switch (num%2){
+            case 0:System.out.println("Число является четным.");
+            break;
+            default:System.out.println("Число является не четным");
+        }
     }
 }
