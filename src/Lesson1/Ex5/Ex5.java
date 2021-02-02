@@ -18,8 +18,8 @@ public class Ex5 {
        else {
            out.println("Не верно");
        }
-
-         if (a==b | a==c | a==d ){
+        //Второй вариант
+         if (a==b || a==c || a==d ){
              out.println( "Не верно.");
          }else if (b==a | b==c | b==d){
              out.println("Не верно.");
