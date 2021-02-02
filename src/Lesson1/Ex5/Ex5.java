@@ -13,7 +13,7 @@ public class Ex5 {
        int c = num/10%10;
        int d = num%10;
 
-       if ((a!=b) & (a!=c) & (a!=d) & (b!=a) & (b!=c) & (b!=d)){
+       if ((a!=b) && (a!=c) && (a!=d) && (b!=a) && (b!=c) && (b!=d)){
            System.out.println("Верно");}
        else {
            out.println("Не верно");
