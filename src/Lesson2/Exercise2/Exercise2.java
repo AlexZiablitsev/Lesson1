@@ -11,17 +11,21 @@ public class Exercise2 {
             array[a] = num % 10;
             num = num / 10;
         }
-
-        for (int a = 0; a < array.length; a++) {
-            for (int b = a + 1; b < array.length; b++) {
-
-                if (array[a] != array[b]) {
-                    System.out.println("Верно.");
-                } else {
-                    System.out.println("Не верно.");// хз как сделать чтобы 1 раз выводило "Верно" или "Не верное"
-                }
-            }
+        if (array[0] != array[1] && array[0] != array[2] && array[0]!= array[3]){
+            System.out.println("True");
+        }else {
+            System.out.println("False");
         }
+
+            /*for (int a = 0; a < array.length; a++) {
+                for (int b = a + 1; b < array.length; b++) {
+
+                    if (array[a] != array[b]) {
+                        System.out.println("True.");
+                    } else {
+                        System.out.println("False.");// хз как сделать чтобы 1 раз выводило "True" или "False"
+                    }
+                }
+            }*/
     }
 }
-
