@@ -11,20 +11,21 @@ public class Exercise2 {
             array[a] = num % 10;
             num = num / 10;
         }
-        for (int s1 = 0; s1 < array.length - 1; s1++) {
-            for (int i = 0; i < array.length - 1; i++) {
-                if (array[i] < array[i + 1]) {
-                    int mem = array[i];
-                    array[i] = array[i + 1];
-                    array[i + 1] = mem;
+
+        boolean flag = true;
+        out:for (int a = 0; a < array.length; a++) {
+            for (int i = a + 1; i < array.length; i++) {
+                if (array[a] == array[i]) {
+                    flag = false;
+                    break out;
                 }
             }
         }
-        if (array[0] != array[1]) {
+        if (flag == true) {
             System.out.println("True");
         } else {
             System.out.println("False");
-
         }
+
     }
 }
