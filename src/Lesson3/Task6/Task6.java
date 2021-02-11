@@ -7,11 +7,12 @@ public class Task6 {
         //суммарный путь пробежит спортсмен за 7 дней?
         float length = 10;
         int days= 7;
+        float percent = 10f;
         float array[] = new float[days];
         float sumLength = length;
         array[0] = length;
         for( int i = 1; i < array.length;i++){
-            array[i]=array[i-1]+(array[i-1]/10);
+            array[i]=array[i-1]+(array[i-1]/100*percent);
             sumLength = sumLength+array[i];
         }
         System.out.println(sumLength);
