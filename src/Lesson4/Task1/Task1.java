@@ -21,7 +21,7 @@ public class Task1 {
                 }
             }
         }
-        for (int i = array.length - 1; i > array.length / 2; i--) {
+        for (int i = array.length - 1; i > array.length / 2 -1; i--) { // при четных не ститало правильно, пришлось подняться на одну строку выше
             for (int j = 0; j < array[i].length; j++) {
                 if ((j < array[i].length - 1 - i) || j > i) {
                     array[i][j] = 0;
