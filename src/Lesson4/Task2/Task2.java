@@ -15,12 +15,8 @@ public class Task2 {
             }
         }
         int sum = 0;
-        for (int i = 0; i < array.length; i++) {
-            for (int j = 0; j < array[i].length; j++) {
-                if (j == i) {
-                    sum += array[i][j];
-                }
-            }
+        for (int i = 0; i < array.length; i++) {//
+            sum += array[i][i];
         }
         System.out.println("Sum = " + sum);
     }
