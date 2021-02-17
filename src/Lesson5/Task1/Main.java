@@ -10,8 +10,8 @@ public class Main {
         //по отдельности. Сделать метод для вывода данных.
         TimePeriod time1 = new TimePeriod(35);
         TimePeriod time2 = new TimePeriod(10, 8, 12);
-        time1.PrintHoursMinutesSeconds();
-        time2.PrintAllsec();
-        System.out.println(time1.compare(time2));
+        time1.printHoursMinutesSeconds();
+        time2.printAllsec();
+        System.out.println(time1.compareTo(time2));
     }
 }

@@ -12,12 +12,14 @@ public class TimePeriod {
     int seconds;
     int minutes;
     int hours;
-    String equel = "They are equals.";
-    String greater = "The first compared period is greater than the second.";
-    String smaller = "The second compared period is greater than the first.";
+//    String equel = "They are equals.";
+//    String greater = "The first compared period is greater than the second.";
+//    String smaller = "The second compared period is greater than the first.";
 
     public TimePeriod(int onlySecond) { // конструктор для только секунд
-        this.seconds = onlySecond;
+        this.seconds = onlySecond % 60;
+        this.minutes = onlySecond / 60 % 60;
+        this.hours = onlySecond / 3600 % 3600;
     }
 
     public TimePeriod(int hours, int minutes, int seconds) { // конструктор для часов, минут, секунд
@@ -26,26 +28,31 @@ public class TimePeriod {
         this.hours = hours;
     }
 
-    public int AllSeconds() { // считаем секунды
+    public int allSeconds() { // считаем секунды
         return hours * 3600 + minutes * 60 + seconds;
     }
 
-    public void PrintAllsec() { // вывод всех секунд
-        System.out.println(String.format("Priod have %s second(s).", AllSeconds()));
+    public void printAllsec() { // вывод всех секунд
+        System.out.println(String.format("Priod have %s second(s).", allSeconds()));
     }
 
-    public void PrintHoursMinutesSeconds() { // вывод часов, минут, секунд
+    public void printHoursMinutesSeconds() { // вывод часов, минут, секунд
         System.out.println(String.format("Period have %s hour(s), %s minute(s), %s second(s)", hours, minutes, seconds));
     }
 
-    public String compare(TimePeriod period) {// самый сложный метод был
-        String result = "";
-        int firstObject = AllSeconds();
-        int secondObject = period.AllSeconds();
-        result = String.format("%s", firstObject == secondObject ? equel // по совету ввел переменные, ибо строка огромная была
-                : firstObject > secondObject ? greater
-                : smaller);
-        return result;
+    public int compareTo(TimePeriod time2) {
+        return Integer.compare(allSeconds(), time2.allSeconds());
     }
 }
+
+//    public String compare(TimePeriod period) {// самый сложный метод был
+//        String result = "";
+//        int firstObject = allSeconds();
+//        int secondObject = period.allSeconds();
+//        result = String.format("%s", firstObject == secondObject ? equel // по совету ввел переменные, ибо строка огромная была
+//                : firstObject > secondObject ? greater
+//                : smaller);
+//        return result;
+//    }
+//}
 
