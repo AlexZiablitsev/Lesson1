@@ -20,14 +20,19 @@ public class Main {
         bookList[2] = book3;
         bookList[3] = book4;
 
-        for (int i = 0; i < bookList.length; i++) {
-            bookList[i].printAuthor("Дави Альфаро Сикейрос");
+        Book[] findBookByAuthor = BookService.findByAuthor(bookList, "Дави Альфаро Сикейрос"); //a) список книг заданного автора;
+
+        for (Book book : findBookByAuthor) {
+            book.pritnBook();
         }
-        for (int i = 0; i < bookList.length; i++) {
-            bookList[i].printPublisher(" ");
+        Book[] findBookByPublisher = BookService.findByPublisher(bookList, "Азбуковник"); //b) список книг, выпущенных заданным издательством;
+        for(Book book : findBookByPublisher){
+            book.pritnBook();
         }
-        for (int i = 0; i < bookList.length; i++) {
-            bookList[i].printYear(2010);
+
+        Book[] findBookByYear = BookService.findByYear(bookList, 2010);  //c) список книг, выпущенных после заданного года
+        for(Book book : findBookByYear){
+            book.pritnBook();
         }
     }
 }
