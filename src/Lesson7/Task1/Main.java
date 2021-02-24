@@ -12,7 +12,7 @@ public class Main {
         //сумму баллов (вывести также полный список абитуриентов, имеющих
         //полупроходную сумму).
 
-        Abiturient list = new Abiturient();
+        AbiturientService list = new AbiturientService(0);
         list.addAbiturient(new Abiturient("Towne", "Amber", "Oliver",
                 "984 Howell Point Suite 091", 84887875278L, new int[]{7, 5, 9, 10, 6}));//1
         list.addAbiturient(new Abiturient("Ivanov", "Andrey", "Vladimirovich",
@@ -35,15 +35,13 @@ public class Main {
                 "44157 Eichmann Lights Apt. 551", 14345995818L, new int[]{5, 5, 6, 7, 6}));//10
 
 
+//        list.negativeRating();                //a) список абитуриентов, имеющих неудовлетворительные оценки;
 
+//        list.incomingApplicants(30);          //b) список абитуриентов, у которых сумма баллов выше заданной;
 
-        //list.negativeRating();         //a) список абитуриентов, имеющих неудовлетворительные оценки;
-
-        //list.incomingApplicants();     //b) список абитуриентов, у которых сумма баллов выше заданной;
-
-        list.sortList();                 //c) выбрать заданное число n абитуриентов, имеющих самую высокую
-        list.questionable();             //сумму баллов (вывести также полный список абитуриентов, имеющих
-                                        //полупроходную сумму).
+        list.questionable(5);             //c) выбрать заданное число n абитуриентов, имеющих самую высокую
+                                                //сумму баллов (вывести также полный список абитуриентов, имеющих
+                                                //полупроходную сумму).
 
 
     }
