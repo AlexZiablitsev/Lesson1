@@ -17,29 +17,36 @@ public class Main {
                 "Liam",
                 "31467 Zboncak Springs Suite 594",
                 5468860432136795L,
-                833198919L);
+                "833198919L");
         Customer customer2 = new Customer(
                 "Jaskolski",
                 "Linnie",
                 "Mason",
                 "603 Halie Meadows Apt. 266",
                 371890026100060L,
-                7712746105604L);
+                "7712746105604S");
         Customer customer3 = new Customer(
                 "Runte",
                 "Dock",
                 "Jacob",
                 "95059 Bryon Locks Apt. 239",
                 4916862562739084L,
-                57922394L);
+                "57922394L");
         Customer[] customersList = new Customer[3];
         customersList[0] = customer1;
         customersList[1] = customer2;
         customersList[2] = customer3;
-        //Arrays.sort(customersList, (a, b) -> a.lastName.compareTo(b.lastName));
+
         Arrays.sort(customersList, Customer::compareThem);
-        for (int i = 0; i < customersList.length; i++) {customersList[i].fullInfoCusmer();}
-        System.out.println("\n"+"\n");
-        for (int i = 0; i < customersList.length; i++) {customersList[i].printIfcardIn(300000000000000L,400000000000000L);}
+//        for (Customer customer : customersList) {
+//            customer.fullInfoCusmer();
+//        }
+
+        System.out.println("\n" + "\n");
+        Customer[] findCard = CustomerService.findByCard(customersList, 300000000000000L, 400000000000000L);
+
+        for (Customer customer : findCard) {
+            customer.fullInfoCusmer();
+        }
     }
 }

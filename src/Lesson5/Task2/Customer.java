@@ -8,21 +8,24 @@ public class Customer {
     //a) список покупателей в алфавитном порядке;
     //b) список покупателей, у которых номер кредитной карточки находится
     //в заданном интервале.
-    public int id;
-    public static int ID = 1;
-    public long creditCardNumber, bankAccountNumber;
-    public String lastName, firstName, patronymicName, address;
-    public int length = 0;
+    private int id;
+    private long creditCardNumber;
+    private String bankAccountNumber;
+    private String lastName;
+    private String firstName;
+    private String patronymicName;
+    private String address;
 
-    public Customer(String lastName, String firstName, String patronymicName, String address, long creditNumberCard, long bankAccountNumber) {
-        this.id = ID++;
+
+    public Customer(String lastName, String firstName, String patronymicName, String address, long creditNumberCard, String bankAccountNumber) {
+        this.id = Id.newId();
         this.lastName = lastName;
         this.firstName = firstName;
         this.patronymicName = patronymicName;
         this.address = address;
         this.creditCardNumber = creditNumberCard;
         this.bankAccountNumber = bankAccountNumber;
-        length++;
+
     }
 
     public void fullInfoCusmer() {
@@ -32,19 +35,11 @@ public class Customer {
         System.out.println(fullInfo);
     }
 
-    public static int compareThem(Customer a, Customer b) {
-        return a.lastName.compareTo(b.lastName);
+    public int compareThem(Customer a) {
+        return lastName.compareTo(a.lastName);
     }
-//    public String get_credit_сard_number() {
-//        return creditCardNumber;
-//    }
 
-    public void printIfcardIn(long sizeA, long sizeB) {
-         String size1 = Long.toString(sizeA);
-        String size2 = Long.toString(sizeB);
-        String creditCart = Long.toString(creditCardNumber);
-        if (creditCart.compareTo(size1) >= 0 &&
-                creditCart.compareTo(size2) <= 0){
-            fullInfoCusmer();}
+    public long getCreditCardNumber() {
+        return creditCardNumber;
     }
 }
