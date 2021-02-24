@@ -6,7 +6,7 @@ public interface MySuperArray {
     int getLength();
 
     //Добавить элемент. Длинна массива должна увеличится на 1.
-    int[] addElement(Integer element);
+    Integer[] addElement(Integer element);
 
     //Получить элемент по индексу
     Integer getElement(int index);
@@ -15,5 +15,5 @@ public interface MySuperArray {
     void removeAllElements();
 
     //Вернуть массив где находятся все текущие элементы
-    int[] getAllElements();
+    Integer[] getAllElements();
 }
