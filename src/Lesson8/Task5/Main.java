@@ -15,7 +15,7 @@ public class Main {
     }
 
     public static void defineIp (String str) {
-        Pattern regex = Pattern.compile("(?<ip1>\\d+\\.\\d+\\.\\d+\\.\\d+)(-(?<ip2>\\d+\\.\\d+\\.\\d+\\.\\d+))?$");
+        Pattern regex = Pattern.compile("(\\d+\\.\\d+\\.\\d+\\.\\d+)");
         Matcher m  = regex.matcher(str);
         if (m.find()){
             System.out.println("It is ip");
