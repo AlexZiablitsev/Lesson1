@@ -13,8 +13,6 @@ public class Student {
     private long phoneNumber;
     private int[] ratings = new int[5];
 
-    List<Student> list = new ArrayList<>();
-
     public Student() {
     }
 
