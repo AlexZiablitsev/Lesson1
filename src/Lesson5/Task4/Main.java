@@ -27,7 +27,7 @@ public class Main {
 
         // изменение четных элементов
         for (int i = 1; i + 1 < array1.length; i += 2) {
-            array1[i].addition(array1[i + 1]);
+            array1[i] = array1[i].addition(array1[i + 1]);
         }
 
         //Вывод массивов

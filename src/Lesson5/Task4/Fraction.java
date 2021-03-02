@@ -10,65 +10,69 @@ public class Fraction {
     private int denominator;
 
 
-    public Fraction(int numerator, int znamenatel) {
+    public Fraction(int numerator, int denominator) {
         this.numerator = numerator;
-        this.denominator = znamenatel;
-        if (znamenatel == 0) {
+        this.denominator = denominator;
+        if (denominator == 0) {
             throw new IllegalArgumentException("Знаменатель не должен ровняться нулю.");
         }
     }
 
-    public int getChislitel() {
+    public int getNumerator() {
         return numerator;
     }
 
-    public int getZnamenatel() {
+    public int getDenominator() {
         return denominator;
     }
 
     public void print() {
-        System.out.println(String.format("%s/%s", numerator, denominator));
+        System.out.println(String.format("%s/%s", getNumerator(), getDenominator()));
     }
 
     protected Fraction addition(Fraction b) {
-        numerator = numerator * b.denominator + b.numerator * denominator;
-        denominator = denominator * b.denominator;
-        Fraction c = format();
+        Fraction c = new Fraction(1, 1);
+        c.numerator = this.numerator * b.denominator + b.numerator * this.denominator;
+        c.denominator = this.denominator * b.denominator;
+        c.format();
         return c;
     }
 
     protected Fraction subtraction(Fraction b) {
-        numerator = numerator * b.denominator - b.numerator * denominator;
-        denominator = denominator * b.denominator;
-        Fraction c = format();
+        Fraction c = new Fraction(1, 1);
+        c.numerator = this.numerator * b.denominator - b.numerator * this.denominator;
+        c.denominator = this.denominator * b.denominator;
+        c.format();
         return c;
     }
 
     protected Fraction multiplication(Fraction b) {
-        numerator = numerator * b.numerator;
-        denominator = denominator * b.denominator;
-        Fraction c = format();
+        Fraction c = new Fraction(1, 1);
+        c.numerator = this.numerator * b.numerator;
+        c.denominator = this.denominator * b.denominator;
+        c.format();
         return c;
     }
 
     protected Fraction division(Fraction b) {
-        numerator = numerator * b.denominator;
-        denominator = denominator * b.numerator;
-        Fraction c = format();
+        Fraction c = new Fraction(1, 1);
+        c.numerator = this.numerator * b.denominator;
+        c.denominator = this.denominator * b.numerator;
+        c.format();
         return c;
     }
 
     protected Fraction format() {
-        int min = Math.min(numerator, denominator);
-        Fraction fraction = new Fraction(getChislitel(), getZnamenatel());
+        int min = Math.min(this.numerator, this.denominator);
+        Fraction fraction = new Fraction(getNumerator(), getDenominator());
         for (int i = min; i > 1; i--) {
             if ((fraction.numerator % i == 0) && (fraction.denominator % i == 0)) {
                 Fraction fraction1 = fraction;
                 fraction1.numerator = fraction.numerator / i;
                 fraction1.denominator = fraction.denominator / i;
                 fraction = fraction1;
-                numerator = fraction1.numerator;
-                denominator = fraction1.denominator;
+                this.numerator = fraction1.numerator;
+                this.denominator = fraction1.denominator;
             }
         }
         return fraction;
