@@ -9,8 +9,8 @@ public class Main {
 
     }
 
-        public static String censored(String str){
+    public static String censored(String str) {
         String str1 = str.replaceAll("бяка", "вырезано цензурой");
-            return str1;
-        }
+        return str1;
+    }
 }
