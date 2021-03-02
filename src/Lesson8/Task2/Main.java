@@ -9,21 +9,13 @@ public class Main {
         String word2 = "Sagas";
         String word3 = "Sub";
 
-        isPalindrome(word1);
-        isPalindrome(word2);
-        isPalindrome(word3);
+        System.out.println(isPalindrome(word1));
+        System.out.println(isPalindrome(word2));
+        System.out.println(isPalindrome(word3));
     }
 
-
-    public static void isPalindrome(String word) {
-        String newWord = "";
-        for (int i = word.length() - 1; i >= 0; i--) {
-            newWord += word.charAt(i);
-        }
-        if (word.equalsIgnoreCase(newWord)) {
-            System.out.println("Word is palindrome.");
-        } else {
-            System.out.println("Word isn't palindrome.");
-        }
+    public static boolean isPalindrome(String str) {
+        String reversStr = new StringBuffer(str).reverse().toString();
+        return str.equalsIgnoreCase(reversStr);
     }
 }
