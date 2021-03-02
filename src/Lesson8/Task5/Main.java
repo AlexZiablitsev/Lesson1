@@ -8,18 +8,21 @@ public class Main {
         // Написать метод, который проверяет является ли строка ip-адресом.
 
         String str = "abracadabra";
-        String str1 = "35.283.181.58";
+        String str1 = "13.213.188.13";
 
-    defineIp(str);
-    defineIp(str1);
+        defineIp(str);
+        defineIp(str1);
     }
 
-    public static void defineIp (String str) {
-        Pattern regex = Pattern.compile("(\\d+\\.\\d+\\.\\d+\\.\\d+)");
-        Matcher m  = regex.matcher(str);
-        if (m.find()){
+    public static void defineIp(String str) {
+        Pattern regex = Pattern.compile("\\b(25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9])\\." +
+                "(25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9])\\." +
+                "(25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9])\\." +
+                "(25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9])\\b");
+        Matcher m = regex.matcher(str);
+        if (m.find()) {
             System.out.println("It is ip");
-        }else {
+        } else {
             System.out.println("It isn't ip");
         }
     }
