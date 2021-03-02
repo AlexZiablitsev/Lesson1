@@ -47,7 +47,7 @@ public class Abiturient {
     public int getSumOfrating() {
         int sumOfRating = 0;
         for (int rating : ratings) {
-            sumOfRating = sumOfRating + rating;
+            sumOfRating += rating;
         }
         return sumOfRating;
     }

@@ -35,13 +35,15 @@ public class Main {
                 "44157 Eichmann Lights Apt. 551", 14345995818L, new int[]{5, 5, 6, 7, 6}));//10
 
 
-//        list.negativeRating();                //a) список абитуриентов, имеющих неудовлетворительные оценки;
+//        AbiturientService list1 = list.negativeRating();                  //a) список абитуриентов, имеющих неудовлетворительные оценки;
+//        list1.printAllList();
 
-//        list.incomingApplicants(30);          //b) список абитуриентов, у которых сумма баллов выше заданной;
+//        AbiturientService list2 = list.incomingApplicants(30);            //b) список абитуриентов, у которых сумма баллов выше заданной;
+//        list1.printAllList();
+        AbiturientService list3 = list.questionable(5);                     //c) выбрать заданное число n абитуриентов, имеющих самую высокую
+        list3.printAllList();                                               //сумму баллов (вывести также полный список абитуриентов, имеющих
+                                                                            //полупроходную сумму).
 
-        list.questionable(5);             //c) выбрать заданное число n абитуриентов, имеющих самую высокую
-                                                //сумму баллов (вывести также полный список абитуриентов, имеющих
-                                                //полупроходную сумму).
 
 
     }
