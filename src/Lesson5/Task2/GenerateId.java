@@ -1,6 +1,6 @@
 package Lesson5.Task2;
 
-public class Id {
+public class GenerateId {
 
     private static int id = 1;
 

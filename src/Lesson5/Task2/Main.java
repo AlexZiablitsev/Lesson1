@@ -37,10 +37,7 @@ public class Main {
         customersList[1] = customer2;
         customersList[2] = customer3;
 
-        Arrays.sort(customersList, Customer::compareThem);
-//        for (Customer customer : customersList) {
-//            customer.fullInfoCusmer();
-//        }
+        Arrays.sort(customersList, Customer::compareTo);
 
         System.out.println("\n" + "\n");
         Customer[] findCard = CustomerService.findByCard(customersList, 300000000000000L, 400000000000000L);

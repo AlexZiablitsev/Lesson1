@@ -1,7 +1,7 @@
 package Lesson5.Task2;
 
 
-public class Customer {
+public class Customer implements Comparable<Customer> {
     //Customer: id, Фамилия, Имя, Отчество, Адрес, Номер кредитной карточки,
     //Номер банковского счета.
     //Создать массив объектов. Вывести:
@@ -18,7 +18,7 @@ public class Customer {
 
 
     public Customer(String lastName, String firstName, String patronymicName, String address, long creditNumberCard, String bankAccountNumber) {
-        this.id = Id.newId();
+        this.id = GenerateId.newId();
         this.lastName = lastName;
         this.firstName = firstName;
         this.patronymicName = patronymicName;
@@ -28,6 +28,10 @@ public class Customer {
 
     }
 
+    public long getCreditCardNumber() {
+        return creditCardNumber;
+    }
+
     public void fullInfoCusmer() {
         String fullInfo = (String.format("ID: %s \nLast Name: %s, \nFirst Name: %s, \nPatronymic Name: %s, \nAddress: %s, " +
                         "\nCredit Card Number: %s, \nBank Account Number: %s.",
@@ -35,11 +39,7 @@ public class Customer {
         System.out.println(fullInfo);
     }
 
-    public int compareThem(Customer a) {
+    public int compareTo(Customer a) {
         return lastName.compareTo(a.lastName);
-    }
-
-    public long getCreditCardNumber() {
-        return creditCardNumber;
     }
 }
