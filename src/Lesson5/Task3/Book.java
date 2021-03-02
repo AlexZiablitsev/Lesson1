@@ -1,7 +1,6 @@
 package Lesson5.Task3;
 
-import Lesson5.Task2.Customer;
-import Lesson5.Task2.Id;
+import Lesson5.Task2.GenerateId;
 
 public class Book {
     //Book: id, Название, Автор (ы), Издательство, Год издания, Количество страниц, Цена.
@@ -18,20 +17,13 @@ public class Book {
     private float price;
 
     public Book(String name, String author, String publisher, int year, int amountPages, float price) {
-        this.id = Id.newId();
+        this.id = GenerateId.newId();
         this.name = name;
         this.author = author;
         this.publisher = publisher;
         this.year = year;
         this.amountPages = amountPages;
         this.price = price;
-    }
-
-
-    public void pritnBook() {
-        String fullInfo = String.format("ID: %s,\nAuthor: %s,\nPublisher: %s," +
-                "\nYear: %s,\nPages: %s,\nPrice: %s.", id, author, publisher, year, amountPages, price);
-        System.out.println(fullInfo);
     }
 
     public String getAuthor() {
@@ -44,5 +36,27 @@ public class Book {
 
     public int getYear() {
         return year;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getAmountPages() {
+        return amountPages;
+    }
+
+    public float getPrice() {
+        return price;
+    }
+
+    public void pritnBook() {
+        String fullInfo = String.format("ID: %s,\nAuthor: %s,\nPublisher: %s," +
+                "\nYear: %s,\nPages: %s,\nPrice: %s.", getId(), getAuthor(), getPublisher(), getYear(), getAmountPages(), getPrice());
+        System.out.println(fullInfo);
     }
 }

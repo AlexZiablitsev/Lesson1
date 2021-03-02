@@ -15,22 +15,22 @@ public class Main {
         Book book3 = new Book("Толковый словарь русского языка", "С.И. Ожегов и Н.Ю. Шведова", "Азбуковник", 2001, 940, 514.88f);
         Book book4 = new Book("Меня называли Лихим Полковником. Воспоминания", "Давид Альфаро Сикейрос",
                 "Государственное издательство политической литературы", 1986, 416, 184f);
-        bookList[0] = book1;//чет не могу додуматься как автоматом вносить их в массив
+        bookList[0] = book1;
         bookList[1] = book2;
         bookList[2] = book3;
         bookList[3] = book4;
 
-        Book[] findBookByAuthor = BookService.findByAuthor(bookList, "Дави Альфаро Сикейрос"); //a) список книг заданного автора;
+        Book[] findBookByAuthor = BookService.findAllByAuthor(bookList, "Дави Альфаро Сикейрос"); //a) список книг заданного автора;
 
         for (Book book : findBookByAuthor) {
             book.pritnBook();
         }
-        Book[] findBookByPublisher = BookService.findByPublisher(bookList, "Азбуковник"); //b) список книг, выпущенных заданным издательством;
+        Book[] findBookByPublisher = BookService.findAllByPublisher(bookList, "Азбуковник"); //b) список книг, выпущенных заданным издательством;
         for(Book book : findBookByPublisher){
             book.pritnBook();
         }
 
-        Book[] findBookByYear = BookService.findByYear(bookList, 2010);  //c) список книг, выпущенных после заданного года
+        Book[] findBookByYear = BookService.findAllByYear(bookList, 2010);  //c) список книг, выпущенных после заданного года
         for(Book book : findBookByYear){
             book.pritnBook();
         }

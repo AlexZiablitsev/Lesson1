@@ -2,7 +2,7 @@ package Lesson5.Task3;
 
 class BookService {
 
-    public static Book[] findByAuthor(Book[] list, String Author) {
+    public static Book[] findAllByAuthor(Book[] list, String Author) {
         Book[] array = new Book[0];
         for (int i = 0; i < list.length; i++) {
             if (list[i].getAuthor().compareTo(Author) == 0) {
@@ -15,7 +15,7 @@ class BookService {
         return array;
     }
 
-    public static Book[] findByPublisher(Book[] list, String Publisher) {
+    public static Book[] findAllByPublisher(Book[] list, String Publisher) {
         Book[] array = new Book[0];
         for (int i = 0; i < list.length; i++) {
             if (list[i].getPublisher().compareTo(Publisher) == 0) {
@@ -29,7 +29,7 @@ class BookService {
 
     }
 
-    public static Book[] findByYear(Book[] list, int year) {
+    public static Book[] findAllByYear(Book[] list, int year) {
         Book[] array = new Book[0];
         for (int i = 0; i < list.length; i++) {
             if (list[i].getYear() >= year) {
