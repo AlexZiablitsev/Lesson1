@@ -19,6 +19,6 @@ public class Main {
                 maxLength = s;
             }
         }
-        return (maxLength);
+        return maxLength;
     }
 }
